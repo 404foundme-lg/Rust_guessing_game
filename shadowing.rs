@@ -13,5 +13,19 @@ fn main() {
     }
 
     println!("The value of x is still: {}", x); // prints 6, the outer scope 
+
+
+    //shadowing with different types
+    let spaces = "   ";
+    let spaces = spaces.len(); // shadows the previous spaces variable with a new type (usize)
+    println!("The number of spaces is: {}", spaces); // prints 3
+
+    // example2: Variable shadowing with different types 
+    let guess = 24;
+    let guess = guess as f64;
+    println!("The value of guess as f64 is: {}", guess); // prints 24.0
+
+
+    let _ = 6;  // anonymous binding, value is immediately dropped 
 }
 
