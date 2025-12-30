@@ -1,4 +1,4 @@
-fn main{
+fn main(){
     // ownership in Rust is a set of rules that governs how memory is managed.
     // The main principles of ownership are: 
     // 1. Each value in Rust has a variable that is called its owner.
@@ -51,5 +51,5 @@ fn main{
         println!("{}", some_integer);
     } // some_integer goes out of scope here
 
-    
+
 }
