@@ -12,5 +12,6 @@ fn main() {
         println!("The value of x in the inner scope is: {}", x); // prints 12
     }
 
-    println!("The value of x is still: {}", x); // prints 6
+    println!("The value of x is still: {}", x); // prints 6, the outer scope 
 }
+
