@@ -14,3 +14,25 @@ fn main() {
     println!("{}", s_ref2);
 }
 
+// Mutable Borrowing:
+//With mutable borrowing, only one part of your code can have a mutable reference to a variable at a time. This ensures that no other part of your code can read or modify the variable while it’s being changed.
+
+
+// This prevents "DATA RACE" conditions at compile time.
+fn main() {
+    let mut s = String::from("Hello");
+    let s_mut_ref = &mut s;  // Mutable borrow
+    s_mut_ref.push_str(", Rust!");
+    println!("{}", s_mut_ref);
+}
+
+// If you try to mix immutable and mutable borrowing at the same time, Rust will give you a compile-time error:
+fn main() {
+    let mut s = String::from("Hello");
+    let s_ref1 = &mut s;  // Mutable borrow
+    let s_ref2 = &s;      // Immutable borrow (This will cause an error)
+}
+// To fix this, ensure that you only have either mutable or immutable references at any given time.
+
+
+// Key Takeaway: Borrowing ensures that you can either have multiple read-only references or a single writeable reference, but never both at the same time.
