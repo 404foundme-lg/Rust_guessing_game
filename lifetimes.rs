@@ -37,3 +37,17 @@ fn main(){
 }
 
 // Rust rejects this because r would outlive x.
+
+
+//lifetimes become reqired when:
+// -A function takes multiple references
+// - The return value is a reference
+fn longest(x: &str, y:&str) -> &str {
+    if x.len() > y.len(){
+        x
+        } else {
+            y
+            }
+        }
+    }
+}
