@@ -5,3 +5,10 @@ edition = "2024"
 
 [dependencies]
 rand = "0.3.14"
+serde_json = { version = "1.0", optional = true }
+serde_yaml = { version = "0.9", optional = true }
+
+[features]
+default = ["json", "yaml"]
+json = ["serde_json"]
+yaml = ["serde_yaml"]
